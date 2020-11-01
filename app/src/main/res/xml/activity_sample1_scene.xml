@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="600">
+
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@+id/textBox1" />
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/end2"
+        motion:constraintSetStart="@id/start"
+        motion:duration="600">
+
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@+id/textBox2" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/textBox1">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue="14" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textBox2">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue="14" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/end"
+        motion:deriveConstraintsFrom="@id/start">
+
+        <Constraint
+            android:id="@+id/textBox1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="40dp"
+                motion:customFloatValue="40" />
+
+            <Transform android:elevation="1dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/end2"
+        motion:deriveConstraintsFrom="@id/start">
+
+        <Constraint
+            android:id="@+id/textBox2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="40dp"
+                motion:customFloatValue="40" />
+
+            <Transform android:elevation="1dp" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
