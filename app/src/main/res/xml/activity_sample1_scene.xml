@@ -3,6 +3,10 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
+        motion:constraintSetEnd="@id/altEnd"
+        motion:constraintSetStart="@id/start" />
+
+    <!--<Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:duration="600">
@@ -20,7 +24,7 @@
         <OnClick
             motion:clickAction="toggle"
             motion:targetId="@+id/textBox2" />
-    </Transition>
+    </Transition>-->
 
     <ConstraintSet android:id="@+id/start">
         <Constraint android:id="@+id/textBox1">
@@ -30,6 +34,18 @@
         </Constraint>
 
         <Constraint android:id="@+id/textBox2">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue="14" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textBox3">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue="14" />
+        </Constraint>
+
+        <Constraint android:id="@+id/textBox4">
             <CustomAttribute
                 motion:attributeName="textSize"
                 motion:customFloatValue="14" />
@@ -50,7 +66,6 @@
 
             <CustomAttribute
                 motion:attributeName="textSize"
-                motion:customDimension="40dp"
                 motion:customFloatValue="40" />
 
             <Transform android:elevation="1dp" />
@@ -71,10 +86,12 @@
 
             <CustomAttribute
                 motion:attributeName="textSize"
-                motion:customDimension="40dp"
                 motion:customFloatValue="40" />
 
             <Transform android:elevation="1dp" />
         </Constraint>
     </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/altEnd" />
 </MotionScene>
