@@ -12,4 +12,6 @@
     <color name="box2Color">#fabb04</color>
     <color name="box3Color">#4284f3</color>
     <color name="box4Color">#e94335</color>
+
+    <color name="colorPrimaryLight">#C5CAE9</color>
 </resources>
